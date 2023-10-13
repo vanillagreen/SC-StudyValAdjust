@@ -9,8 +9,8 @@ Big thanks to Luda on Trader Network Lounge Discord
 SCSFExport scsf_StudyInputChangeSymChange(SCStudyInterfaceRef sc)
 {
     // Define study inputs
-    SCInputRef Input_LargeVolumeStudyID = sc.Input[0];
-    SCInputRef Input_LargeVolumeStudyInputID = sc.Input[1];
+    SCInputRef Input_StudyID = sc.Input[0];
+    SCInputRef Input_StudyInputID = sc.Input[1];
     SCInputRef Input_One = sc.Input[2];
     SCInputRef Input_One_Value = sc.Input[3];
     SCInputRef Input_Two = sc.Input[4];
@@ -32,11 +32,11 @@ SCSFExport scsf_StudyInputChangeSymChange(SCStudyInterfaceRef sc)
         sc.AutoLoop = 0;  // Disable AutoLoop
 
         // Initialize study inputs
-        Input_LargeVolumeStudyID.Name = "Large Volume Study ID";
-        Input_LargeVolumeStudyID.SetInt(5);
+        Input_StudyID.Name = "Large Volume Study ID";
+        Input_StudyID.SetInt(5);
 
-        Input_LargeVolumeStudyInputID.Name = "Large Volume Study Input ID";
-        Input_LargeVolumeStudyInputID.SetInt(1);
+        Input_StudyInputID.Name = "Large Volume Study Input ID";
+        Input_StudyInputID.SetInt(1);
 
         Input_One.Name= "Symbol 1";
         Input_One.SetString("AAPL_MBO");
@@ -73,28 +73,28 @@ SCSFExport scsf_StudyInputChangeSymChange(SCStudyInterfaceRef sc)
     }
 
     // Get the Large Volume Study ID
-    int largeVolumeStudyID = Input_LargeVolumeStudyID.GetInt();
+    int StudyID = Input_StudyID.GetInt();
 
     // Adjust the input of the Large Volume Study based on the symbol
     if (sc.Symbol == Input_One.GetString())
     {
-        sc.SetChartStudyInputInt(sc.ChartNumber, largeVolumeStudyID, Input_LargeVolumeStudyInputID.GetInt() - 1, Input_One_Value.GetInt());
+        sc.SetChartStudyInputInt(sc.ChartNumber, StudyID, Input_StudyInputID.GetInt() - 1, Input_One_Value.GetInt());
     }
     else if (sc.Symbol == Input_Two.GetString())
     {
-        sc.SetChartStudyInputInt(sc.ChartNumber, largeVolumeStudyID, Input_LargeVolumeStudyInputID.GetInt() - 1, Input_Two_Value.GetInt());
+        sc.SetChartStudyInputInt(sc.ChartNumber, StudyID, Input_StudyInputID.GetInt() - 1, Input_Two_Value.GetInt());
     }
     else if (sc.Symbol == Input_Three.GetString())
     {
-        sc.SetChartStudyInputInt(sc.ChartNumber, largeVolumeStudyID, Input_LargeVolumeStudyInputID.GetInt() - 1, Input_Three_Value.GetInt());
+        sc.SetChartStudyInputInt(sc.ChartNumber, StudyID, Input_StudyInputID.GetInt() - 1, Input_Three_Value.GetInt());
     }
     else if (sc.Symbol == Input_Four.GetString())
     {
-        sc.SetChartStudyInputInt(sc.ChartNumber, largeVolumeStudyID, Input_LargeVolumeStudyInputID.GetInt() - 1, Input_Four_Value.GetInt());
+        sc.SetChartStudyInputInt(sc.ChartNumber, StudyID, Input_StudyInputID.GetInt() - 1, Input_Four_Value.GetInt());
     }
     else if (sc.Symbol == Input_Five.GetString())
     {
-        sc.SetChartStudyInputInt(sc.ChartNumber, largeVolumeStudyID, Input_LargeVolumeStudyInputID.GetInt() - 1, Input_Five_Value.GetInt());
+        sc.SetChartStudyInputInt(sc.ChartNumber, StudyID, Input_StudyInputID.GetInt() - 1, Input_Five_Value.GetInt());
     }
 
 }
