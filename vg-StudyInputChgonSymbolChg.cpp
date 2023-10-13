@@ -32,10 +32,10 @@ SCSFExport scsf_StudyInputChangeSymChange(SCStudyInterfaceRef sc)
         sc.AutoLoop = 0;  // Disable AutoLoop
 
         // Initialize study inputs
-        Input_StudyID.Name = "Large Volume Study ID";
-        Input_StudyID.SetInt(5);
+        Input_StudyID.Name = "Study ID";
+        Input_StudyID.SetStudyID(1);
 
-        Input_StudyInputID.Name = "Large Volume Study Input ID";
+        Input_StudyInputID.Name = "Study Input ID";
         Input_StudyInputID.SetInt(1);
 
         Input_One.Name= "Symbol 1";
